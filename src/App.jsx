@@ -1,6 +1,7 @@
 import "./App.css";
 import Main from "./containers/Main/Main";
 import Banner from "./containers/navbar/Banner";
+
 import Navbar from "./containers/navbar/Navbar";
 
 function App() {

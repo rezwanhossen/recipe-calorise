@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { IoTimeOutline } from "react-icons/io5";
 import { FaFire } from "react-icons/fa";
 import Ingred from "./Ingred";
-const Card = ({ card }) => {
+const Card = ({ card, handelWantToCook }) => {
   const {
     recipe_name,
     recipe_img,
@@ -19,7 +19,7 @@ const Card = ({ card }) => {
           src={recipe_img}
           alt="Recipe imeags"
         />
-        <h1 className=" text-2xl font-bold ">{recipe_name}</h1>
+        <h1 className=" text-xl font-bold ">{recipe_name}</h1>
         <p>{short_description}</p>
 
         <hr />
@@ -36,12 +36,18 @@ const Card = ({ card }) => {
             <FaFire /> {calories}
           </p>
         </div>
-        <button className="btn bg-[#0BE58A] text-xl">Want to Cook</button>
+        <button
+          className="btn bg-[#0BE58A] text-xl"
+          onClick={() => handelWantToCook(card)}
+        >
+          Want to Cook
+        </button>
       </div>
     </div>
   );
 };
 Card.PropTypes = {
   card: PropTypes.object.isRequired,
+  handelWantToCook: PropTypes.func,
 };
 export default Card;
