@@ -14,6 +14,13 @@ const Main = () => {
       alert("aaa");
     }
   };
+  const handelDelet = (delet) => {
+    const deletitms = additm.filter(
+      (itms) => itms.recipe_id != delet.recipe_id
+    );
+    setadditm(deletitms);
+    setaddcount(addcount - 1);
+  };
 
   return (
     <div>
@@ -29,7 +36,11 @@ const Main = () => {
         <div className=" flex flex-col sm:flex-row  gap-4">
           <Cards handelWantToCook={handelWantToCook}></Cards>
           <div className="  ">
-            <Sidebar additm={additm} addcount={addcount}></Sidebar>
+            <Sidebar
+              additm={additm}
+              addcount={addcount}
+              handelDelet={handelDelet}
+            ></Sidebar>
           </div>
         </div>
       </section>
