@@ -1,6 +1,9 @@
 import { useState } from "react";
 import Cards from "../Cards/Cards";
 import Sidebar from "../sidebar/Sidebar";
+import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Main = () => {
   const [Curcooking, setCurcooking] = useState([]);
@@ -15,7 +18,7 @@ const Main = () => {
       setadditm([...additm, cd]);
       setaddcount(addcount + 1);
     } else {
-      alert("aaa");
+      toast("Already Exist!");
     }
   };
   const handelDelet = (delet) => {
@@ -62,6 +65,7 @@ const Main = () => {
           </div>
         </div>
       </section>
+      <ToastContainer />
     </div>
   );
 };
