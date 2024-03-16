@@ -3,8 +3,10 @@ import Cards from "../Cards/Cards";
 import Sidebar from "../sidebar/Sidebar";
 
 const Main = () => {
+  const [Curcooking, setCurcooking] = useState([]);
   const [additm, setadditm] = useState([]);
   const [addcount, setaddcount] = useState(0);
+  const [adddelecunt, setadddelecunt] = useState(0);
   const handelWantToCook = (cd) => {
     const isExist = additm.find((itm) => itm.recipe_id == cd.recipe_id);
     if (!isExist) {
@@ -20,7 +22,15 @@ const Main = () => {
     );
     setadditm(deletitms);
     setaddcount(addcount - 1);
+    const exist = Curcooking.find(
+      (newitm) => newitm.recipe_id == delet.recipe_id
+    );
+    if (!exist) {
+      setCurcooking([...Curcooking, delet]);
+      setadddelecunt(adddelecunt + 1);
+    }
   };
+  // console.log(Curcooking);
 
   return (
     <div>
@@ -35,11 +45,13 @@ const Main = () => {
         </div>
         <div className=" flex flex-col sm:flex-row  gap-4">
           <Cards handelWantToCook={handelWantToCook}></Cards>
-          <div className="  ">
+          <div className=" ">
             <Sidebar
               additm={additm}
               addcount={addcount}
               handelDelet={handelDelet}
+              Curcooking={Curcooking}
+              adddelecunt={adddelecunt}
             ></Sidebar>
           </div>
         </div>
