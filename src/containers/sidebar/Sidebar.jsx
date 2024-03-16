@@ -8,6 +8,8 @@ const Sidebar = ({
   handelDelet,
   Curcooking,
   adddelecunt,
+  time,
+  calo,
 }) => {
   return (
     <div className=" border border-1 rounded-md p-3 ">
@@ -34,7 +36,12 @@ const Sidebar = ({
       </table>
 
       <hr />
-      <Lowcurr adddelecunt={adddelecunt} Curcooking={Curcooking}></Lowcurr>
+      <Lowcurr
+        adddelecunt={adddelecunt}
+        time={time}
+        calo={calo}
+        Curcooking={Curcooking}
+      ></Lowcurr>
     </div>
   );
 };
@@ -44,6 +51,8 @@ Sidebar.PropTypes = {
   handelDelet: PropTypes.func,
   Curcooking: PropTypes.array,
   adddelecunt: PropTypes.number,
+  time: PropTypes.number,
+  calo: PropTypes.number,
 };
 
 export default Sidebar;

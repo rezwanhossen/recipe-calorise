@@ -7,6 +7,8 @@ const Main = () => {
   const [additm, setadditm] = useState([]);
   const [addcount, setaddcount] = useState(0);
   const [adddelecunt, setadddelecunt] = useState(0);
+  const [time, settim] = useState(0);
+  const [calo, setcalo] = useState(0);
   const handelWantToCook = (cd) => {
     const isExist = additm.find((itm) => itm.recipe_id == cd.recipe_id);
     if (!isExist) {
@@ -25,6 +27,8 @@ const Main = () => {
     const exist = Curcooking.find(
       (newitm) => newitm.recipe_id == delet.recipe_id
     );
+    settim(time + delet.preparing_time);
+    setcalo(calo + delet.calories);
     if (!exist) {
       setCurcooking([...Curcooking, delet]);
       setadddelecunt(adddelecunt + 1);
@@ -52,6 +56,8 @@ const Main = () => {
               handelDelet={handelDelet}
               Curcooking={Curcooking}
               adddelecunt={adddelecunt}
+              time={time}
+              calo={calo}
             ></Sidebar>
           </div>
         </div>

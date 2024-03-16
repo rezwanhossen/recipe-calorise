@@ -6,7 +6,7 @@ const Currently = ({ valu, inx }) => {
         <td>{inx + 1}</td>
         <td>{valu.recipe_name}</td>
         <td>{valu.preparing_time} minutes</td>
-        <td>{valu.calories}</td>
+        <td>{valu.calories} calories</td>
       </tr>
     </div>
   );

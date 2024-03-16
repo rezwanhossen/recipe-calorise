@@ -5,7 +5,7 @@ const Itemsid = ({ itm, index, handelDelet }) => {
       <td>{index + 1}</td>
       <td>{itm.recipe_name}</td>
       <td>{itm.preparing_time} minutes</td>
-      <td>{itm.calories}</td>
+      <td>{itm.calories} calories</td>
       <td className="btn bg-[#0BE58A]" onClick={() => handelDelet(itm)}>
         Preparing
       </td>

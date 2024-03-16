@@ -33,7 +33,7 @@ const Card = ({ card, handelWantToCook }) => {
             <IoTimeOutline></IoTimeOutline> {preparing_time} minutes
           </p>
           <p className=" flex gap-2 items-center">
-            <FaFire /> {calories}
+            <FaFire /> {calories} calories
           </p>
         </div>
         <button
