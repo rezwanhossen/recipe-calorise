@@ -2,7 +2,7 @@ import "./Banner.css";
 const Banner = () => {
   return (
     <div>
-      <div className=" hero min-h-screen bg-cover bg rounded-xl text-white ">
+      <div className=" hero min-h-screen bg-cover bg rounded-xl  text-white ">
         <div className="hero-content text-center">
           <div>
             <h1 className="text-3xl sm:text-5xl font-bold">

@@ -17,7 +17,7 @@ const Sidebar = ({
         Want to cook: {addcount}
       </h2>
       <hr />
-      <table className=" table w-[100%]">
+      <table className=" table w-full overflow-x-auto">
         <tr>
           <th></th>
           <th>Name</th>
@@ -25,23 +25,37 @@ const Sidebar = ({
           <th>Calories</th>
           <th></th>
         </tr>
-        {additm.map((itm, index) => (
-          <Itemsid
-            key={itm.id}
-            itm={itm}
-            index={index}
-            handelDelet={handelDelet}
-          ></Itemsid>
-        ))}
+        <tbody>
+          {additm.map((itm, index) => (
+            <Itemsid
+              key={itm.id}
+              itm={itm}
+              index={index}
+              handelDelet={handelDelet}
+            ></Itemsid>
+          ))}
+        </tbody>
       </table>
 
       <hr />
-      <Lowcurr
-        adddelecunt={adddelecunt}
-        time={time}
-        calo={calo}
-        Curcooking={Curcooking}
-      ></Lowcurr>
+      <div className="overflow-x-auto">
+        <table className=" table w-full">
+          <Lowcurr
+            adddelecunt={adddelecunt}
+            time={time}
+            calo={calo}
+            Curcooking={Curcooking}
+          ></Lowcurr>
+        </table>
+      </div>
+      <p>
+        <b>total time: </b>
+        {time} min
+      </p>
+      <p>
+        <b>total calories: </b>
+        {calo} calories
+      </p>
     </div>
   );
 };

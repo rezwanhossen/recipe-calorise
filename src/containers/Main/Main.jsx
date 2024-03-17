@@ -25,16 +25,20 @@ const Main = () => {
     const deletitms = additm.filter(
       (itms) => itms.recipe_id != delet.recipe_id
     );
-    setadditm(deletitms);
-    setaddcount(addcount - 1);
+
     const exist = Curcooking.find(
       (newitm) => newitm.recipe_id == delet.recipe_id
     );
-    settim(time + delet.preparing_time);
-    setcalo(calo + delet.calories);
+    setadditm(deletitms);
+    setaddcount(addcount - 1);
+
     if (!exist) {
       setCurcooking([...Curcooking, delet]);
       setadddelecunt(adddelecunt + 1);
+      settim(time + delet.preparing_time);
+      setcalo(calo + delet.calories);
+    } else {
+      toast("Already Exist!");
     }
   };
   // console.log(Curcooking);
