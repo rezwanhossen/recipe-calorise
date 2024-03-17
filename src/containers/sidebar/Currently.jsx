@@ -2,7 +2,7 @@ import propTypes from "prop-types";
 const Currently = ({ valu, inx }) => {
   return (
     <div>
-      <tbody>
+      <tbody className=" bg-slate-200 rounded-md ">
         <tr>
           <td>{inx + 1}</td>
           <td>{valu.recipe_name}</td>

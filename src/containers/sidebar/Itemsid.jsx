@@ -1,7 +1,7 @@
 import propTypes from "prop-types";
 const Itemsid = ({ itm, index, handelDelet }) => {
   return (
-    <tr>
+    <tr className="bg-slate-200 rounded-md">
       <td>{index + 1}</td>
       <td>{itm.recipe_name}</td>
       <td>{itm.preparing_time} minutes</td>
